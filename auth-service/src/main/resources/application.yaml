@@ -6,7 +6,28 @@ spring:
     config:
         import: "optional:configserver:http://localhost:8088/"
 
+    # cloud:
+    #     config:
+    #         enabled: false
+
     main:
         allow-bean-definition-overriding: true
+    
+    datasource: 
+        url: jdbc:postgresql://localhost:5432/pline_pay_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+        username: plinepay
+        password: plinepay
+        hikari:
+            maximum-pool-size: 10
+    jpa:
+        show-sql: true
+        properties:
+            hibernate:
+                ddl-auto: update
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                query:
+                    plan_cache_max_size: 64
+                    plan_parameter_metadata_max_size: 32
 jwt:
-    secret: hbhxvffsrbbfbeibeibiuhoieajfkopcwvouniebfhjbeibucbhbuebuhjrhjioJUInuJOpko;kthbdfsplBYOPiuhcufhuefuif 
+    secret: hbhxvffsrbbfbeibeibiuhoieajfkopcwvouniebfhjbeibucbhbuebuhjrhjioJUInuJOpko;kthbdfsplBYOPiuhcufhuefuif
+
