@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <main>
+        <button onclick="logMovies();">Search data</button>
+    </main>
+
+    <script>
+        async function logMovies() {
+            const response = await fetch("http://192.168.0.104:8086/departments/with-employees");
+            // const response = await fetch("http://192.168.0.104:8086/auth/login", {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //         "Accept": "*/*"
+            //     },
+            //     body: JSON.stringify({
+            //         "username": "admin",
+            //         "password": "password"
+            //     }),
+            // });
+            const data = await response.json();
+            console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            console.log(data);
+            console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        }
+
+    </script>
+</body>
+
+</html>
